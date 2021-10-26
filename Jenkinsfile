@@ -6,15 +6,13 @@ pipeline{
        {
     		steps
             {
-    			echo "test success"
-    			echo"ghghg"
-    		}
-	    }
+    			bat "npm test" 
+    	    }
+	}
 	    stage("build")
         {
             steps
             {
-		        git "https://github.com/radhikam-vb/minidockerassignment"
                 bat "docker build -t jenkinimage ."
             }
         }
